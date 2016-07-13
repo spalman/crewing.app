@@ -13,9 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
+    
 });
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard','DashboardController@index');
+Route::post('/dashboard','DashboardController@create');

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Vacancy;
 use App\Http\Requests;
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Request;
 
 class DashboardController extends Controller
 {
@@ -24,6 +26,25 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $data=[
+        'vacancies'=>Vacancy::all()
+        ];
+        return view('dashboard',$data);
+    }
+    
+    // Create new vacancy in database
+    public  function  create()
+    {
+           $data = Request::all();
+            Vacancy::create([
+               'name' => $data['name'],
+               'description' => $data['description'],
+               'country' => $data['country'],
+               'position' => $data['position'],
+               'languages' => $data['languages'],
+               'sex' => $data['sex'],
+               'age' => $data['age'],
+           ]);
+        return redirect('/dashboard');
     }
 }
