@@ -106,6 +106,7 @@
     <!-- Table -->
     <div class="container">
         <h2>Вакансии</h2>
+        @if( ! $vacancies->isEmpty() )
         <table class="table table-striped">
             <thead>
             <tr>
@@ -138,5 +139,8 @@
 
             </tbody>
         </table>
+        @else
+            <h3>Вакансий нет</h3>
+        @endif
     </div>
 @endsection
