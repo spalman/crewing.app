@@ -40,13 +40,15 @@
                             <div class="form-group">
                                 <label for="country_name" class="col-md-4 control-label">Страна</label>
 
-                                <div class="col-md-6">
-                                    <select class="form-control" id="country_name" name="country_name">
+                              <div class="col-md-6">
+                                 <select class="form-control" id="country_name" name="country_name">
+
                                        @foreach($countries as $country)
                                             <option value="{{$country->country_name}}">  {{$country->country_name}} </option>
                                         @endforeach
                                     </select>
-                                </div>
+
+                               </div>
                             </div>
 
                             <div class="form-group">
@@ -59,10 +61,44 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="salary_from" class="col-md-4 control-label">Зарплата от</label>
+
+                                <div class="col-md-6">
+                                    <input id="salary_from" type="text" class="form-control" name="salary_from">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="salary_to" class="col-md-4 control-label">Зарплата до</label>
+
+                                <div class="col-md-6">
+                                    <input id="salary_to" type="text" class="form-control" name="salary_to">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="education" class="col-md-4 control-label">Образование</label>
+
+                                <div class="col-md-6">
+                                    <select class="form-control" id="sex" name="education">
+
+                                            <option value="неполное высшее образование"> неполное высшее образование  </option>
+                                        <option value="базовое высшее образование"> базовое высшее образование  </option>
+                                        <option value="полное высшее образование"> полное высшее образование</option>
+                                        <option value="полное среднее образование"> полное среднее образование</option>
+                                        <option value="неполное среднее образование"> неполное среднее образование</option>
+                                        <option value="среднее специальное образование"> среднее специальное образование</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="languages" class="col-md-4 control-label">Знание языков</label>
 
                                 <div class="col-md-6">
-                                    <select multiple class="form-control" id="languages" name="languages">
+                                    <select multiple class="form-control" id="languages" name="languages[] ">
                                         @foreach($languages as $language)
                                             <option value="{{$language->language}}">  {{$language->language}} </option>
                                         @endforeach
@@ -122,11 +158,14 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Название</th>
                     <th>Описание</th>
                     <th>Страна</th>
                     <th>Специальность</th>
+                    <th>Зарплата</th>
                     <th>Знание языков</th>
+                    <th>Образование</th>
                     <th>Пол</th>
                     <th>Возраст</th>
                 </tr>
@@ -134,16 +173,24 @@
                 <tbody>
                 @foreach($vacancies as $vacancy)
                     <tr>
+                        <td>    {!! $vacancy->id !!} </td>
                         <td>    {!! $vacancy->name !!}  </td>
                         <td>    {!! $vacancy->description !!}  </td>
-                        <td>    {!! $vacancy->country !!}  </td>
+                        <td>    {!! DB::table('countries')->where('id',$vacancy->country)->value('country_name') !!}  </td>
                         <td>    {!! $vacancy->position !!}  </td>
-                        <td>    {!! $vacancy->languages !!}  </td>
+                        <td>    {!! $vacancy->salary_from !!} - {{$vacancy->salary_to}} </td>
+
+                        <td>
+                            @foreach($vac_lang as $lang)
+                                @if($lang->vac_id===$vacancy->id)
+                                    {!! DB::table('languages')->where('id',$lang->lang_id)->value('language') !!}
+                                @endif
+                            @endforeach
+                        </td>
+
+                        <td>    {!! $vacancy->education !!}  </td>
                         <td>    {!! $vacancy->sex !!}  </td>
-                        <td>    {!! $vacancy->age !!}  </td>
-
-
-
+                        <td>    {!! $vacancy->age_from !!} - {!! $vacancy->age_to !!}  </td>
 
                     </tr>
                 @endforeach

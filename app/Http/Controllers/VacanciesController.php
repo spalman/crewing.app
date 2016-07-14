@@ -22,7 +22,8 @@ class VacanciesController extends Controller
         $data=[
             'vacancies'=>Vacancy::all(),
             'countries'=>Country::all(),
-            'languages'=>Language::all()
+            'languages'=>Language::all(),
+            'vac_lang'=>Vacancy_lang::all()
         ];
         return view('vacancies',$data);
     }
@@ -36,10 +37,22 @@ class VacanciesController extends Controller
             'description' => $data['description'],
             'country' => DB::table('countries')->where('country_name',$data['country_name'])->value('id'),
             'position' => $data['position'],
-            'sex' => $data['sex'],
             'age_from' => $data['age_from'],
-            'age_to' => $data['age_to']
+            'age_to' => $data['age_to'],
+            'salary_from'=>$data['salary_from'],
+            'salary_to'=>$data['salary_to'],
+            'education'=>$data['education'],
+            'sex' => $data['sex']
         ]);
+        //dd(DB::table('vacancies')->max('id'));
+        foreach ($data['languages'] as $lang)
+        {
+
+            DB::table('vacancy_langs')->insert(
+                ['vac_id' => DB::table('vacancies')->max('id'),
+                    'lang_id' => DB::table('languages')->where('language',$lang)->value('id')]
+            );
+        }
         return redirect('/vacancies');
     }
 }
