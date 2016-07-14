@@ -15,14 +15,15 @@ class CreateVacanciesTable extends Migration
         Schema::create('vacancies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',100);
-            $table->text('description');
-            $table->string('country',50);
+            $table->text('description')->nullable();
+            $table->integer('country_id')->unsigned();
             $table->string('position',100);
-            $table->string('languages');
-            //$table->enum('sex',['Мужчина','Женщина','Все']);
-            $table->string('sex',50);
-            $table->integer('age')->unsigned();
+            $table->enum('sex',['Мужчина','Женщина','Все']);
+            $table->integer('age_from')->unsigned();
+            $table->integer('age_to')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('country_id')->references('id')->in('countries');
         });
     }
 

@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    GWST
                 </a>
             </div>
 
@@ -48,6 +48,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <!--Only for  authenticated user -->
+                    @if (Auth::check())
+                    <li><a href="{{ url('/vacancies') }}">Вакансии</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

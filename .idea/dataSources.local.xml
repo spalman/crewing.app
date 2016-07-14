@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - gwst_database@localhost" uuid="edcbdefc-f48b-4513-9711-89485f32873d">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>gwst_database.*</schema-pattern>
+      <default-schemas>gwst_database.*</default-schemas>
+    </data-source>
+  </component>
+</project>

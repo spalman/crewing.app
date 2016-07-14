@@ -35,16 +35,7 @@ class DashboardController extends Controller
     // Create new vacancy in database
     public  function  create()
     {
-           $data = Request::all();
-            Vacancy::create([
-               'name' => $data['name'],
-               'description' => $data['description'],
-               'country' => $data['country'],
-               'position' => $data['position'],
-               'languages' => $data['languages'],
-               'sex' => $data['sex'],
-               'age' => $data['age'],
-           ]);
+      
         return redirect('/dashboard');
     }
 }

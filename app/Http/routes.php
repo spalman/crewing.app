@@ -19,5 +19,9 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
 Route::get('/dashboard','DashboardController@index');
-Route::post('/dashboard','DashboardController@create');
+//Route::post('/dashboard','DashboardController@create');
+
+Route::get('/vacancies','VacanciesController@index');
+Route::post('/vacancies','VacanciesController@create');
