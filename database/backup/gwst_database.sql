@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Июл 14 2016 г., 19:15
+-- Время создания: Июл 15 2016 г., 20:39
 -- Версия сервера: 10.1.14-MariaDB
 -- Версия PHP: 7.0.8
 
@@ -494,7 +494,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@mail.ru', '$2y$10$k6639i7QNJcAfG/IgwJ6Zewq6UJZrzLAc5dDZUmn2qHqSEPHVQ73C', 'VY2YJ4369exnSt1SvxBNYqEjiQAkkBTZcFt4IvrgOYJhitiOK6MBR8pHkknC', '2016-07-14 10:59:55', '2016-07-14 11:18:15');
+(1, 'admin', 'admin@mail.ru', '$2y$10$k6639i7QNJcAfG/IgwJ6Zewq6UJZrzLAc5dDZUmn2qHqSEPHVQ73C', 'h4pwWA9R302xDkTsWuaBriV4DasidE5diWUbTXlUEfcFJHb0yO0DUCCVq4YC', '2016-07-14 10:59:55', '2016-07-15 07:41:44');
 
 -- --------------------------------------------------------
 
@@ -534,7 +534,8 @@ INSERT INTO `vacancies` (`id`, `name`, `description`, `country`, `position`, `se
 (9, 'asd', 'asd', '1', 'asd', 'Мужчина', 15, 15, '2016-07-14 15:52:12', '2016-07-14 15:52:12', 12, 15, 'неполное высшее образование'),
 (10, 'Lsoda', 'Asfhoka', '1', 'aasfhj', 'Мужчина', 15, 18, '2016-07-14 16:08:13', '2016-07-14 16:08:13', 1111, 11251, 'полное среднее образование'),
 (11, 'Lsoda', 'Asfhoka', '1', 'aasfhj', 'Мужчина', 15, 18, '2016-07-14 16:08:56', '2016-07-14 16:08:56', 1111, 11251, 'полное среднее образование'),
-(12, '124фыа', 'фыаф', '1', 'фыа', 'Мужчина', 17, 18, '2016-07-14 16:11:39', '2016-07-14 16:11:39', 15, 17, 'полное высшее образование');
+(12, '124фыа', 'фыаф', '1', 'фыа', 'Мужчина', 17, 18, '2016-07-14 16:11:39', '2016-07-14 16:11:39', 15, 17, 'полное высшее образование'),
+(13, 'asdasda', 'asdasd', '1', '123123', 'Мужчина', 1245, 1255, '2016-07-14 16:44:51', '2016-07-14 16:44:51', 123, 12414, 'базовое высшее образование');
 
 -- --------------------------------------------------------
 
@@ -567,7 +568,10 @@ INSERT INTO `vacancy_langs` (`vac_id`, `lang_id`) VALUES
 (12, 8),
 (12, 9),
 (12, 10),
-(12, 12);
+(12, 12),
+(13, 2),
+(13, 3),
+(13, 4);
 
 --
 -- Индексы сохранённых таблиц
@@ -635,7 +639,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `vacancies`
 --
 ALTER TABLE `vacancies`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
