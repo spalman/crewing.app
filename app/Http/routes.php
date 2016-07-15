@@ -20,6 +20,8 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/vacancies-list','VacanciesListController@index');
+Route::get('/vacancies-list/{id}',['uses' =>'VacanciesListController@showVac'])->where('id', '[0-9]+');
 
 
 

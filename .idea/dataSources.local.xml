@@ -4,8 +4,8 @@
     <data-source name="MySQL - gwst_database@localhost" uuid="edcbdefc-f48b-4513-9711-89485f32873d">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <schema-pattern>gwst_database.*</schema-pattern>
-      <default-schemas>gwst_database.*</default-schemas>
+      <introspection-scope>gwst_database:*</introspection-scope>
+      <resolve-scope>gwst_database:*</resolve-scope>
     </data-source>
   </component>
 </project>
