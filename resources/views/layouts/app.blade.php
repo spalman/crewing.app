@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/chosen/chosen.css">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <!--Talbe sort plugin-->
+    <script type="text/javascript" src="jquery-latest.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.js"></script>
 
     <style>
         body {
@@ -95,6 +98,7 @@
             $(selector).chosen(config[selector]);
         }
     </script>
+
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

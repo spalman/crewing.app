@@ -20,14 +20,14 @@ class VacanciesController extends Controller
     public function index()
     {
         $data=[
-            'vacancies'=>Vacancy::all(),
+            'vacancies'=>Vacancy::latest()->paginate(5),
             'countries'=>Country::all(),
             'languages'=>Language::all(),
             'vac_lang'=>Vacancy_lang::all()
         ];
         return view('vacancies',$data);
     }
-
+    
 
     public function create()
     {
@@ -54,5 +54,16 @@ class VacanciesController extends Controller
             );
         }
         return redirect('/vacancies');
+    }
+
+    public  function showVac($id)
+    {
+        $data=[
+            'vacancies'=>DB::table('vacancies')->where('id',$id)->get(),
+            //'vac_lang'=>Vacancy_lang::all()
+            'vac_lang'=>DB::table('vacancy_langs')->where('vac_id',$id)->get()
+        ];
+        //dd($data);
+        return view('vacancy_page',$data);
     }
 }

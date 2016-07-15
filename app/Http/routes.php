@@ -20,8 +20,16 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/dashboard','DashboardController@index');
-//Route::post('/dashboard','DashboardController@create');
 
-Route::get('/vacancies','VacanciesController@index');
-Route::post('/vacancies','VacanciesController@create');
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('vacancies/{id}', ['uses' =>'VacanciesController@showVac'])->where('id', '[0-9]+');
+    Route::get('/vacancies','VacanciesController@index');
+    Route::post('/vacancies','VacanciesController@create');
+    Route::get('/dashboard','DashboardController@index');
+});
+
+

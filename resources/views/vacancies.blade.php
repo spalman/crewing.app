@@ -32,8 +32,7 @@
                                 <label for="description" class="col-md-4 control-label">Описание</label>
 
                                 <div class="col-md-6">
-                                    <input id="description" type="text" class="form-control" name="description">
-
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
                                 </div>
                             </div>
 
@@ -151,16 +150,39 @@
     </div>
     </div>
 
+
+
+       <div class="container">
+           <h2>Inline form</h2>
+           <p>Make the viewport larger than 768px wide to see that all of the form elements are inline, left aligned, and the labels are alongside.</p>
+           <form class="form-inline" role="form">
+               <div class="form-group">
+                   <label for="email">Email:</label>
+                   <input type="email" class="form-control" id="email" placeholder="Enter email">
+               </div>
+               <div class="form-group">
+                   <label for="pwd">Password:</label>
+                   <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+               </div>
+               <div class="checkbox">
+                   <label><input type="checkbox"> Remember me</label>
+               </div>
+               <button type="submit" class="btn btn-default">Submit</button>
+           </form>
+       </div>
+
+
+
     <!-- Table -->
     <div class="container">
         <h2>Вакансии</h2>
         @if( ! $vacancies->isEmpty() )
-            <table class="table table-striped">
+            <table class="table table-striped" id="vacancies_table">
                 <thead>
                 <tr>
                     <th>ID</th>
                     <th>Название</th>
-                    <th>Описание</th>
+                    <!--<th>Описание</th>-->
                     <th>Страна</th>
                     <th>Специальность</th>
                     <th>Зарплата</th>
@@ -168,14 +190,15 @@
                     <th>Образование</th>
                     <th>Пол</th>
                     <th>Возраст</th>
+                    <th>Created at</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($vacancies as $vacancy)
                     <tr>
-                        <td>    {!! $vacancy->id !!} </td>
+                        <td>  {!! $vacancy->id !!}   <button type="button" class="btn btn-info" onclick="location.href='/vacancies/{{$vacancy->id}}'">Info</button>    </td>
                         <td>    {!! $vacancy->name !!}  </td>
-                        <td>    {!! $vacancy->description !!}  </td>
+                        <!--<td>    {!! $vacancy->description !!}  </td>-->
                         <td>    {!! DB::table('countries')->where('id',$vacancy->country)->value('country_name') !!}  </td>
                         <td>    {!! $vacancy->position !!}  </td>
                         <td>    {!! $vacancy->salary_from !!} - {{$vacancy->salary_to}} </td>
@@ -191,15 +214,23 @@
                         <td>    {!! $vacancy->education !!}  </td>
                         <td>    {!! $vacancy->sex !!}  </td>
                         <td>    {!! $vacancy->age_from !!} - {!! $vacancy->age_to !!}  </td>
-
+                        <td>    {!! $vacancy->created_at !!}   </td>
                     </tr>
                 @endforeach
                 <tr>
 
                 </tbody>
             </table>
+            <div class="text-center">
+                {{$vacancies->render()}}
+            </div>
         @else
             <h3>Вакансий нет</h3>
         @endif
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#vacancies_table").tablesorter();
+            });
+        </script>
     </div>
 @endsection
