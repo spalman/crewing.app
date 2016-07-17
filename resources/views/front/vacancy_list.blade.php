@@ -27,9 +27,9 @@
                         <label>Ваш пол: </label>
                         <select class="browser-default">
                             <option value="" disabled selected>Выберите пол</option>
-                            <option value="1">Мужчина</option>
-                            <option value="2">Женщина</option>
-                            <option value="3">Не важно</option>
+                            <option value="Мужчина">Мужчина</option>
+                            <option value="Женщина">Женщина</option>
+                            <option value="Все">Все</option>
                         </select>
                     </div>
                 </div>
@@ -49,9 +49,9 @@
                         <label>Ваше образование: </label>
                         <select class="browser-default">
                             <option value="" disabled selected>Выберите возраст</option>
-                            <option value="1">19-25</option>
-                            <option value="2">25-30</option>
-                            <option value="3">30-40</option>
+                            @foreach($educations as $education)
+                                <option value="{{$education}}">  {{$education}} </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -60,9 +60,9 @@
                         <label>Страна: </label>
                         <select class="browser-default">
                             <option value="" disabled selected>Выберите страну</option>
-                            <option value="1">Мужчина</option>
-                            <option value="2">Женщина</option>
-                            <option value="3">Не важно</option>
+                            @foreach($countries as $country)
+                                <option value="{{$country->country_name}}">  {{$country->country_name}} </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -93,9 +93,9 @@
                         <label>Знание языков: </label>
                         <select class="browser-default">
                             <option value="" disabled selected>Языки</option>
-                            <option value="1">19-25</option>
-                            <option value="2">25-30</option>
-                            <option value="3">30-40</option>
+                            @foreach($languages as $language)
+                                <option value="{{$language->language}}">  {{$language->language}} </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -103,35 +103,10 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="vacancy-wrapper">
-        <div class="total-vacancy">
-            Всего найдено <b>1845</b> вакансий
-        </div>
 
 
-@foreach($vacancies as $vacancy)
-        <div class="vacancy-row">
-            <div class="job">
-                <a href="#">{{$vacancy->name}}</a>
-            </div>
-            <div class="properties">
-                <span class="place">Киевская кондитерская компания</span>—
-                <span class="country">{!! DB::table('countries')->where('id',$vacancy->country)->value('country_name') !!} </span>—
-                <span class="payment"><b>{!! $vacancy->salary_from !!} - {{$vacancy->salary_to}}</b></span>
-            </div>
-            <div class="description">
-                <span> {{$vacancy->description}}</span>
-                <a href="#">➤</a>
-            </div>
-            <div class="line"></div>
-        </div>
-
-        @endforeach
-        <div class="text-center">
-            {{$vacancies->render()}}
-        </div>
-    </div>
+<div class="container" id="vacancies_items">
+    @yield('items')
 </div>
 
 @endsection
