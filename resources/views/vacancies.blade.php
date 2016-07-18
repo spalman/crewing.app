@@ -32,7 +32,8 @@
                                 <label for="description" class="col-md-4 control-label">Описание</label>
 
                                 <div class="col-md-6">
-                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                   <!-- <textarea class="form-control" rows="5" id="description" name="description"></textarea> -->
+                                    <input id="description" type="text" class="form-control" name="description">
                                 </div>
                             </div>
 
@@ -152,24 +153,6 @@
 
 
 
-       <div class="container">
-           <h2>Inline form</h2>
-           <p>Make the viewport larger than 768px wide to see that all of the form elements are inline, left aligned, and the labels are alongside.</p>
-           <form class="form-inline" role="form">
-               <div class="form-group">
-                   <label for="email">Email:</label>
-                   <input type="email" class="form-control" id="email" placeholder="Enter email">
-               </div>
-               <div class="form-group">
-                   <label for="pwd">Password:</label>
-                   <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-               </div>
-               <div class="checkbox">
-                   <label><input type="checkbox"> Remember me</label>
-               </div>
-               <button type="submit" class="btn btn-default">Submit</button>
-           </form>
-       </div>
 
 
 
@@ -227,10 +210,5 @@
         @else
             <h3>Вакансий нет</h3>
         @endif
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $("#vacancies_table").tablesorter();
-            });
-        </script>
     </div>
 @endsection

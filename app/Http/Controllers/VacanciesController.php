@@ -20,7 +20,7 @@ class VacanciesController extends Controller
     public function index()
     {
         $data=[
-            'vacancies'=>Vacancy::latest()->paginate(5),
+            'vacancies'=>Vacancy::latest()->paginate(20),
             'countries'=>Country::all(),
             'languages'=>Language::all(),
             'vac_lang'=>Vacancy_lang::all()
@@ -32,6 +32,7 @@ class VacanciesController extends Controller
     public function create()
     {
         $data = Request::all();
+        //dd($data);
         Vacancy::create([
             'name' => $data['name'],
             'description' => $data['description'],

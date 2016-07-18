@@ -1,9 +1,6 @@
-@extends('front.vacancy_list')
-
-@section('items')
 <div class="vacancy-wrapper">
     <div class="total-vacancy">
-        Всего <b>{{count($vacancies)}}</b> вакансий
+      Найдено <b>{{count($vacancies)}}</b> вакансий
     </div>
 
 
@@ -29,5 +26,3 @@
 
     </div>
 </div>
-
-    @endsection

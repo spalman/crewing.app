@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-    
+
 });
 
 Route::auth();
@@ -21,6 +21,9 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/vacancies-list','VacanciesListController@index');
+
+Route::post('/vacancies-list','VacanciesListController@filter');
+
 Route::get('/vacancies-list/{id}',['uses' =>'VacanciesListController@showVac'])->where('id', '[0-9]+');
 
 
@@ -33,5 +36,3 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/vacancies','VacanciesController@create');
     Route::get('/dashboard','DashboardController@index');
 });
-
-

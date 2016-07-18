@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Laravel</title>
 
@@ -11,11 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/chosen/chosen.css">
-    <link rel="stylesheet" href="../assets/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="assets/chosen/chosen.css">
+    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
 {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 <!--Talbe sort plugin-->
     <script type="text/javascript" src="jquery-latest.js"></script>
@@ -57,12 +57,43 @@
 @yield('content')
 
 </main>
+
+<footer>
+  <div class="container footer-content">
+    <div class="row">
+      <div class="col m2 logo-footer-wrapper">
+        <img src="images/logo-footer.png" alt="" />
+      </div>
+      <div class="col m8 bottom-menu">
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Консалтинг</a></li>
+          <li><a class="bordered" href="#">Трудоустройство</a></li>
+          <li><a href="#">Образование</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="col m2 footer-address">
+        Украина, Одесса ул.Льва Толстого, 20 </br>
+        +38 (098) 006-77-31 </br>
+        +38 (050) 786-25-55 </br>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+      <div class="container">
+      © 2016  GWST 2016, все права защищены
+      <span class="float-right">Designed by NorthUnicorn Web studio</span>
+      </div>
+    </div>
+</footer>
+
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="../assets/chosen/chosen.jquery.js" type="text/javascript"></script>
-<script src="../assets/materialize/js/materialize.min.js" type="text/javascript"></script>
-<script src="../js/script.js" type="text/javascript"></script>
+
+<script src="assets/chosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="assets/materialize/js/materialize.min.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
 <script type="text/javascript">
     var config = {
         '.chosen-select'           : {},
