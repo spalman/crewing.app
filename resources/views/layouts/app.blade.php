@@ -14,11 +14,11 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/chosen/chosen.css">
-    <link rel="stylesheet" href="../assets/materialize/materialize.min.css">
+    <!--<link rel="stylesheet" href="../assets/materialize/materialize.min.css">-->
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <!--Talbe sort plugin-->
-    <script type="text/javascript" src="jquery-latest.js"></script>
-    <script type="text/javascript" src="jquery.tablesorter.js"></script>
+
+    <!-- jQuery: required (tablesorter works with jQuery 1.2.3+)
+    <script src="../js/jquery-3.1.0.min.js"></script> -->
 
     <style>
         body {
@@ -87,7 +87,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="../assets/chosen/chosen.jquery.js" type="text/javascript"></script>
-    <script src="../assets/materialize/materialize.min.js" type="text/javascript"></script>
+    <script src="../assets/materialize/js/materialize.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         var config = {
             '.chosen-select'           : {},
@@ -99,6 +99,18 @@
         for (var selector in config) {
             $(selector).chosen(config[selector]);
         }
+    </script>
+    <script src="../assets/tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="../assets/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+    <script>
+        $(function(){
+            $('table').tablesorter({
+                widgets        : ['zebra', 'columns'],
+                usNumberFormat : false,
+                sortReset      : true,
+                sortRestart    : true
+            });
+        });
     </script>
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

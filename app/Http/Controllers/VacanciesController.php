@@ -32,7 +32,8 @@ class VacanciesController extends Controller
     public function create()
     {
         $data = Request::all();
-        //dd($data);
+
+        dd($data);
         Vacancy::create([
             'name' => $data['name'],
             'description' => $data['description'],

@@ -33,7 +33,7 @@
 
                                 <div class="col-md-6">
                                    <!-- <textarea class="form-control" rows="5" id="description" name="description"></textarea> -->
-                                    <input id="description" type="text" class="form-control" name="description">
+                                    <textarea class="form-control" rows="5" id="description" name="description"></textarea>
                                 </div>
                             </div>
 
@@ -41,8 +41,8 @@
                                 <label for="country_name" class="col-md-4 control-label">Страна</label>
 
                               <div class="col-md-6">
-                                 <select class="form-control" id="country_name" name="country_name">
 
+                                     <select data-placeholder="Выберите страну..." class="chosen-select" style="width:350px;" id="country_name" name="country_name">
                                        @foreach($countries as $country)
                                             <option value="{{$country->country_name}}">  {{$country->country_name}} </option>
                                         @endforeach
@@ -98,7 +98,8 @@
                                 <label for="languages" class="col-md-4 control-label">Знание языков</label>
 
                                 <div class="col-md-6">
-                                    <select multiple class="form-control" id="languages" name="languages[] ">
+                                    <!--<select multiple class="form-control" id="languages" name="languages[] ">-->
+                                    <select data-placeholder="Выберите языки..." id="language" name="languages[]" class="chosen-select" multiple >
                                         @foreach($languages as $language)
                                             <option value="{{$language->language}}">  {{$language->language}} </option>
                                         @endforeach
@@ -160,7 +161,7 @@
     <div class="container">
         <h2>Вакансии</h2>
         @if( ! $vacancies->isEmpty() )
-            <table class="table table-striped" id="vacancies_table">
+            <table class="tablesorter" id="vacancies_table">
                 <thead>
                 <tr>
                     <th>ID</th>

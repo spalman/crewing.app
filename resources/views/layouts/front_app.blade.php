@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    <link rel="stylesheet" href="assets/chosen/chosen.css">
-    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/chosen/chosen.css">
+    <link rel="stylesheet" href="../assets/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 <!--Talbe sort plugin-->
@@ -91,9 +91,9 @@
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 
-<script src="assets/chosen/chosen.jquery.js" type="text/javascript"></script>
-<script src="assets/materialize/js/materialize.min.js" type="text/javascript"></script>
-<script src="js/script.js" type="text/javascript"></script>
+<script src="../assets/chosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="../assets/materialize/js/materialize.min.js" type="text/javascript"></script>
+<script src="../js/script.js" type="text/javascript"></script>
 <script type="text/javascript">
     var config = {
         '.chosen-select'           : {},

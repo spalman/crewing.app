@@ -94,8 +94,10 @@
                 <div class="col m3 filter-item">
                     <div class="select-field">
                         <label>Знание языков: </label>
-                        <select id="language" class="browser-default">
-                            <option value="" disabled selected>Языки</option>
+                        <!--<select id="language" class="browser-default">
+                        <option value="" disabled selected>Языки</option>-->
+                        <select data-placeholder="Выберите языки..." id="language" class="chosen-select" multiple >
+
                             @foreach($languages as $language)
                                 <option value="{{$language->language}}">  {{$language->language}} </option>
                             @endforeach

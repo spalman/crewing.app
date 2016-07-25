@@ -48,7 +48,7 @@ class VacanciesListController extends Controller
         $params=Request::all();
 
         //dd((array)$params['language']);
-        if(empty($params['sex'])) {$sex='%';} else {$sex=$params['sex'];}
+        if(empty($params['sex']) || $params['sex']==='Все') {$sex='%';} else {$sex=$params['sex'];}
         if(empty($params['country'])) {$country='%';} else {$country=DB::table('countries')->where('country_name',$params['country'])->value('id');}
         if(empty($params['age'])) {$age[0]=100; $age[1]=0;} else {$age=explode("-",$params['age']);}
         if(empty($params['salary'])) {$salary[0]=10000; $salary[1]=0;} else {$salary=explode("-",$params['salary']);}
