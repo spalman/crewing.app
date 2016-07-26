@@ -1,6 +1,6 @@
-$(document).ready(function(){
+jQuery(document).ready(function(){
 
-      $('.parallax').parallax();
+      jQuery('.parallax').parallax();
 
       var filterList = function ()
       	{
@@ -67,5 +67,6 @@ $(document).ready(function(){
       document.getElementById("position").addEventListener("change", filterList);
       document.getElementById("salary").addEventListener("change", filterList);
     }
+
 
 });
