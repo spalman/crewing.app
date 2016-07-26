@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Июл 15 2016 г., 20:39
+-- Время создания: Июл 26 2016 г., 17:58
 -- Версия сервера: 10.1.14-MariaDB
 -- Версия PHP: 7.0.8
 
@@ -494,7 +494,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@mail.ru', '$2y$10$k6639i7QNJcAfG/IgwJ6Zewq6UJZrzLAc5dDZUmn2qHqSEPHVQ73C', 'h4pwWA9R302xDkTsWuaBriV4DasidE5diWUbTXlUEfcFJHb0yO0DUCCVq4YC', '2016-07-14 10:59:55', '2016-07-15 07:41:44');
+(1, 'admin', 'admin@mail.ru', '$2y$10$k6639i7QNJcAfG/IgwJ6Zewq6UJZrzLAc5dDZUmn2qHqSEPHVQ73C', 'pIRi73tBdfs27ZuCMCrXoOePGH7Wp2EEg6QYFjbC3nZJOjvHjrBLGK6zDaE6', '2016-07-14 10:59:55', '2016-07-18 12:32:38');
 
 -- --------------------------------------------------------
 
@@ -523,19 +523,32 @@ CREATE TABLE `vacancies` (
 --
 
 INSERT INTO `vacancies` (`id`, `name`, `description`, `country`, `position`, `sex`, `age_from`, `age_to`, `created_at`, `updated_at`, `salary_from`, `salary_to`, `education`) VALUES
-(1, 'asd', 'ads', '1', 'asd', 'Мужчина', 0, NULL, '2016-07-14 12:39:25', '2016-07-14 12:39:25', 0, NULL, 'неполное высшее образование'),
-(2, '123', '11', '1', '213', 'Мужчина', 0, NULL, '2016-07-14 15:19:36', '2016-07-14 15:19:36', 10, 20, 'полное высшее образование'),
-(3, '123', '11', '1', '213', 'Мужчина', 0, NULL, '2016-07-14 15:24:24', '2016-07-14 15:24:24', 10, 20, 'полное высшее образование'),
-(4, '123', '11', '1', '213', 'Мужчина', 12, 15, '2016-07-14 15:26:34', '2016-07-14 15:26:34', 10, 20, 'полное высшее образование'),
-(5, '', '', '1', '', 'Мужчина', 0, 0, '2016-07-14 15:45:22', '2016-07-14 15:45:22', 0, 0, 'неполное высшее образование'),
-(6, '', '', '1', '', 'Мужчина', 0, 0, '2016-07-14 15:46:13', '2016-07-14 15:46:13', 0, 0, 'неполное высшее образование'),
-(7, '', '', '1', '', 'Мужчина', 0, 0, '2016-07-14 15:47:04', '2016-07-14 15:47:04', 0, 0, 'неполное высшее образование'),
-(8, 'asd', 'asd', '1', 'asd', 'Мужчина', 15, 15, '2016-07-14 15:49:16', '2016-07-14 15:49:16', 12, 15, 'неполное высшее образование'),
-(9, 'asd', 'asd', '1', 'asd', 'Мужчина', 15, 15, '2016-07-14 15:52:12', '2016-07-14 15:52:12', 12, 15, 'неполное высшее образование'),
-(10, 'Lsoda', 'Asfhoka', '1', 'aasfhj', 'Мужчина', 15, 18, '2016-07-14 16:08:13', '2016-07-14 16:08:13', 1111, 11251, 'полное среднее образование'),
-(11, 'Lsoda', 'Asfhoka', '1', 'aasfhj', 'Мужчина', 15, 18, '2016-07-14 16:08:56', '2016-07-14 16:08:56', 1111, 11251, 'полное среднее образование'),
-(12, '124фыа', 'фыаф', '1', 'фыа', 'Мужчина', 17, 18, '2016-07-14 16:11:39', '2016-07-14 16:11:39', 15, 17, 'полное высшее образование'),
-(13, 'asdasda', 'asdasd', '1', '123123', 'Мужчина', 1245, 1255, '2016-07-14 16:44:51', '2016-07-14 16:44:51', 123, 12414, 'базовое высшее образование');
+(39, 'ЗАО БухКреп', 'Nulla repellat dolores magnam in rem cupiditate. Explicabo error aspernatur et corporis.', '69', 'quibusdam', 'Все', 37, 55, NULL, NULL, 337, 3484, 'базовое высшее образование'),
+(40, 'ОАО ТрансТеле', 'Iure alias et ipsum. Aut dolores earum saepe. Occaecati eveniet quia aut similique.', '20', 'deleniti', 'Женщина', 29, 26, NULL, NULL, 253, 3224, 'полное среднее образование'),
+(41, 'ОАО ТелеТяжЖелДор', 'Repellat sunt id quasi consequuntur et voluptate vitae. Numquam animi corporis amet aut atque eum.', '26', 'beatae', 'Мужчина', 36, 60, NULL, NULL, 438, 888, 'неполное среднее образование'),
+(42, 'ООО ТелеТяжАлмаз', 'Sapiente velit nulla nihil unde iste qui. Quia et hic dolores quos.', '27', 'sit', 'Женщина', 35, 27, NULL, NULL, 163, 2455, 'среднее специальное образование'),
+(43, 'ОАО БухРосМоторМаш', 'Quia ut ratione placeat. Nihil nihil ipsam modi aliquam. Est facilis ipsam dolor quia non.', '161', 'rerum', 'Мужчина', 22, 58, NULL, NULL, 338, 3019, 'полное высшее образование'),
+(44, 'ООО Компания СтройЖелДорАсбоцемент', 'Quibusdam alias quis blanditiis quis. Ut et voluptatem recusandae at. Dolore quis quos et et.', '26', 'quisquam', 'Все', 38, 38, NULL, NULL, 146, 3976, 'базовое высшее образование'),
+(45, 'ООО ТекстильАсбоцемент', 'Sit libero beatae incidunt aut vel. Id odit repellendus iusto.', '208', 'optio', 'Все', 24, 51, NULL, NULL, 252, 3910, 'полное высшее образование'),
+(46, 'ООО Компания Лифт', 'Sequi quae velit ex earum. Error aut accusantium vel dolor ut non in.', '212', 'iusto', 'Женщина', 23, 28, NULL, NULL, 395, 1161, 'неполное среднее образование'),
+(47, 'ЗАО ОблМоторТелеЛизинг', 'Culpa nihil exercitationem tempora aut eos quos veniam. Qui dolorum eos earum nulla incidunt aut.', '197', 'quidem', 'Женщина', 19, 33, NULL, NULL, 240, 1024, 'среднее специальное образование'),
+(48, 'ООО ГаражЭлектро', 'Voluptatem quia quia id sed. Non qui alias sed ab ab. Sit repellat doloribus corrupti autem.', '148', 'soluta', 'Все', 24, 57, NULL, NULL, 244, 3287, 'полное среднее образование'),
+(49, 'ООО Компания ЖелДор', 'Voluptatem voluptas ea magni molestiae quo. Neque et ut officiis.', '147', 'facere', 'Все', 40, 52, NULL, NULL, 471, 2425, 'полное высшее образование'),
+(50, 'ООО БашкирМетизЭлектроЛизинг', 'Consequuntur ut aspernatur accusantium libero. Consequatur consequatur aut laboriosam voluptatibus.', '131', 'autem', 'Женщина', 35, 49, NULL, NULL, 487, 2681, 'среднее специальное образование'),
+(51, 'ОАО ХозБух', 'Vitae natus et sed sapiente iure iste quia. Maiores iusto necessitatibus aut sit eveniet id.', '135', 'labore', 'Женщина', 24, 59, NULL, NULL, 489, 1824, 'базовое высшее образование'),
+(52, 'ОАО ЭлектроСтройТех', 'Sunt autem sint ut. Et omnis non maxime voluptatum.', '164', 'hic', 'Женщина', 26, 27, NULL, NULL, 324, 3967, 'полное высшее образование'),
+(53, 'ООО Метиз', 'Eveniet est magni debitis nobis aut enim. Fugit aut placeat provident maiores.', '15', 'eligendi', 'Мужчина', 22, 48, NULL, NULL, 313, 2194, 'полное высшее образование'),
+(54, 'ОАО ЖелДорГаражЖелДор', 'Vel sed corporis sint atque provident ab dolores. Et qui et omnis numquam consequatur.', '53', 'quis', 'Женщина', 36, 31, NULL, NULL, 112, 1219, 'среднее специальное образование'),
+(55, 'ООО Компания Строй', 'Cum a enim voluptatem aut a aut aliquid velit. Sequi dolorem nulla perferendis.', '66', 'tempore', 'Женщина', 32, 58, NULL, NULL, 376, 2023, 'неполное высшее образование'),
+(56, 'ООО Компания ТехСтройРос', 'Autem voluptatem at earum eum quia vero repellat. Animi quis aut dolorem possimus.', '101', 'tempore', 'Все', 29, 22, NULL, NULL, 198, 1040, 'полное среднее образование'),
+(57, 'ООО Компания РосРосЭлектро', 'Explicabo repellendus eos ut. Vitae rerum commodi rerum. Repellendus laboriosam fugit id.', '188', 'cum', 'Все', 23, 36, NULL, NULL, 185, 2413, 'полное высшее образование'),
+(58, 'ООО Компания ТелеТверьМотор', 'Aut et ut dolor eaque. Velit debitis assumenda iste voluptatem. Beatae enim dolore et ad nobis.', '193', 'sit', 'Женщина', 24, 24, NULL, NULL, 261, 2302, 'полное среднее образование'),
+(59, 'ОАО Тверь', 'Perspiciatis culpa delectus necessitatibus et doloremque. Magni aut dolore in ea et eligendi.', '6', 'molestiae', 'Мужчина', 28, 27, NULL, NULL, 469, 1557, 'полное среднее образование'),
+(60, 'ОАО ТекстильТехТверьНаладка', 'Iusto esse esse non aut. Magnam magni itaque veritatis nobis. Et ut quis voluptas dolorem cum odio.', '137', 'aut', 'Все', 29, 52, NULL, NULL, 410, 561, 'неполное высшее образование'),
+(61, 'ЗАО УралАсбоцементУралПром', 'Et iste vitae vel quasi. Suscipit assumenda quasi dicta pariatur. Quo perferendis optio qui quos.', '229', 'adipisci', 'Женщина', 27, 54, NULL, NULL, 208, 2300, 'полное высшее образование'),
+(62, 'ООО АвтоХозХоз-М', 'Ut vitae natus dolorem nihil. Aut ea aliquam enim ullam ipsa mollitia aut omnis.', '27', 'accusantium', 'Все', 33, 28, NULL, NULL, 383, 2155, 'полное среднее образование'),
+(63, 'ООО Компания РосХозЭлектроПром', 'Doloremque ullam consequatur aut quia fugit sit. Aperiam quisquam enim voluptate dolores.', '234', 'eaque', 'Все', 33, 37, NULL, NULL, 242, 2532, 'неполное высшее образование'),
+(64, 'Test', 'Test', '1', 'Test', 'Мужчина', 18, 20, '2016-07-18 12:43:12', '2016-07-18 12:43:12', 500, 1000, 'неполное высшее образование');
 
 -- --------------------------------------------------------
 
@@ -553,25 +566,9 @@ CREATE TABLE `vacancy_langs` (
 --
 
 INSERT INTO `vacancy_langs` (`vac_id`, `lang_id`) VALUES
-(9, 2),
-(9, 3),
-(9, 4),
-(10, 1),
-(10, 2),
-(11, 2),
-(11, 3),
-(11, 7),
-(11, 8),
-(11, 9),
-(11, 20),
-(11, 22),
-(12, 8),
-(12, 9),
-(12, 10),
-(12, 12),
-(13, 2),
-(13, 3),
-(13, 4);
+(64, 1),
+(64, 2),
+(64, 3);
 
 --
 -- Индексы сохранённых таблиц
@@ -639,7 +636,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `vacancies`
 --
 ALTER TABLE `vacancies`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
