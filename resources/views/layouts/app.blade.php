@@ -56,6 +56,7 @@
                     <!--Only for  authenticated user -->
                     @if (Auth::check())
                     <li><a href="{{ url('/vacancies') }}">Вакансии</a></li>
+                        <li><a href="{{ url('/vacancies/add') }}">Добавить вакансию</a></li>
                     @endif
                 </ul>
 

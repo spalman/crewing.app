@@ -15,7 +15,7 @@
                 <span class="payment"><b>{!! $vacancy->salary_from !!} - {{$vacancy->salary_to}}</b></span>
             </div>
             <div class="description">
-                <span> {{$vacancy->description}}</span>
+                <span> {{substr($vacancy->description,0,300)}}...</span>
                 <a href=/vacancies-list/{{$vacancy->id}}>➤</a>
             </div>
             <div class="line"></div>

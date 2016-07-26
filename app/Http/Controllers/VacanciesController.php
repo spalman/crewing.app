@@ -29,34 +29,7 @@ class VacanciesController extends Controller
     }
     
 
-    public function create()
-    {
-        $data = Request::all();
 
-        dd($data);
-        Vacancy::create([
-            'name' => $data['name'],
-            'description' => $data['description'],
-            'country' => DB::table('countries')->where('country_name',$data['country_name'])->value('id'),
-            'position' => $data['position'],
-            'age_from' => $data['age_from'],
-            'age_to' => $data['age_to'],
-            'salary_from'=>$data['salary_from'],
-            'salary_to'=>$data['salary_to'],
-            'education'=>$data['education'],
-            'sex' => $data['sex']
-        ]);
-        //dd(DB::table('vacancies')->max('id'));
-        foreach ($data['languages'] as $lang)
-        {
-
-            DB::table('vacancy_langs')->insert(
-                ['vac_id' => DB::table('vacancies')->max('id'),
-                    'lang_id' => DB::table('languages')->where('language',$lang)->value('id')]
-            );
-        }
-        return redirect('/vacancies');
-    }
 
     public  function showVac($id)
     {
@@ -67,5 +40,39 @@ class VacanciesController extends Controller
         ];
         //dd($data);
         return view('vacancy_page',$data);
+    }
+    public function sorter()
+    {
+        $input = Request::all();
+        switch ($input['sort']){
+            case "newest":
+                $data=[
+                    'vacancies'=>Vacancy::latest()->paginate(20),
+                    'countries'=>Country::all(),
+                    'languages'=>Language::all(),
+                    'vac_lang'=>Vacancy_lang::all()
+                ];
+                break;
+            case "oldest":
+                $data=[
+                    'vacancies'=>Vacancy::oldest()->paginate(20),
+                    'countries'=>Country::all(),
+                    'languages'=>Language::all(),
+                    'vac_lang'=>Vacancy_lang::all()
+                ];
+                break;
+            case "name":
+                $data=[
+                    'vacancies'=>DB::table('vacancies')
+                        ->orderBy('name', 'asc')->paginate(20),
+                    'countries'=>Country::all(),
+                    'languages'=>Language::all(),
+                    'vac_lang'=>Vacancy_lang::all()
+                ];
+                break;
+        }
+        return view('vacancies',$data);
+
+
     }
 }

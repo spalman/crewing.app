@@ -50,10 +50,11 @@ class VacanciesListController extends Controller
         //dd((array)$params['language']);
         if(empty($params['sex']) || $params['sex']==='Все') {$sex='%';} else {$sex=$params['sex'];}
         if(empty($params['country'])) {$country='%';} else {$country=DB::table('countries')->where('country_name',$params['country'])->value('id');}
-        if(empty($params['age'])) {$age[0]=100; $age[1]=0;} else {$age=explode("-",$params['age']);}
+        if(empty($params['age'])) {$age[0]=100; $age[1]=0;}  else {$age[0]=$age[1]=intval($params['age']);}
         if(empty($params['salary'])) {$salary[0]=10000; $salary[1]=0;} else {$salary=explode("-",$params['salary']);}
         if(empty($params['education'])) {$education='%'; } else {$education=$params['education'];}
         if(empty($params['language']))
+
             {
                 $ids=DB::table('vacancies')->get(array('id'));
                 for($i=0; $i<count($ids);$i++)
@@ -79,16 +80,13 @@ class VacanciesListController extends Controller
                         }
 
                     }
-//var_dump($salary);
           $data=[
               'vacancies'=>DB::table('vacancies')
                                 ->whereIn('id',$ids)
                                 ->where('sex','like',$sex)
                                 ->where('country','like',$country)
-                                ->where('age_from','<=',intval($age[0]))
-                                ->where('age_to','>=',intval($age[1]))
-                                //->where('salary_from','<=',intval($salary[0]))
-                                //->where('salary_to','>=',intval($salary[1]))
+                                ->where('age_from','<=',$age[0])
+                                ->where('age_to','>=',$age[1])
                                 ->where('salary_from','<=',$salary[0])
                                 ->where('salary_to','>=',$salary[1])
                                 ->where('education','like',$education)

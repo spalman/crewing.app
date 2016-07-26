@@ -38,10 +38,9 @@
                         <label>Ваш возраст: </label>
                         <select id="age" class="browser-default">
                             <option value="" disabled selected>Выберите возраст</option>
-                            <option value="18-25">19-25</option>
-                            <option value="25-30">25-30</option>
-                            <option value="30-40">30-40</option>
-                            <option value="40-40">40+</option>
+                            @for ($i = 18; $i < 41; $i++)
+                                <option value="{{$i}}">  {{$i}} </option>
+                            @endfor
                         </select>
                     </div>
                 </div>
@@ -67,7 +66,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="col m3 filter-item">
+               <!--
+               <div class="col m3 filter-item">
                     <div class="select-field">
                         <label>Специальность: </label>
                         <select id="position" class="browser-default">
@@ -91,12 +91,12 @@
                         </select>
                     </div>
                 </div>
+                -->
                 <div class="col m3 filter-item">
                     <div class="select-field">
                         <label>Знание языков: </label>
-                        <!--<select id="language" class="browser-default">
-                        <option value="" disabled selected>Языки</option>-->
-                        <select data-placeholder="Выберите языки..." id="language" class="chosen-select" multiple >
+                        <select id="language" class="browser-default">
+                        <option value="" disabled selected>Языки</option>
 
                             @foreach($languages as $language)
                                 <option value="{{$language->language}}">  {{$language->language}} </option>
