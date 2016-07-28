@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Vacancy;
+use DB;
+
 
 class HomeController extends Controller
 {
@@ -24,6 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('front.index');
+        //dd
+        $itemsInTable=DB::table('vacancies')->count();
+        if($itemsInTable > 3)
+        {
+            //get 20% of whole table
+            $data=[
+                'vacancies'=>DB::select('SELECT * FROM vacancies ORDER BY RAND() LIMIT 3;'),
+                ];
+        }
+        else{$data=null;}
+        return view('front.index',$data);
     }
 }
