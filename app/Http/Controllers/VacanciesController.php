@@ -45,7 +45,7 @@ class VacanciesController extends Controller
         {
           //  dd(Request::all());
             $input=Request::all();
-            var_dump($input);
+            //var_dump($input);
             $type = DB::select(DB::raw('SHOW COLUMNS FROM vacancies WHERE Field = "education"'))[0]->Type;
             preg_match('/^enum\((.*)\)$/', $type, $matches);
             $values = array();
