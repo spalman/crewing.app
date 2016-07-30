@@ -7,7 +7,13 @@
         <!-- Table -->
         <div class="container">
             <h2>Вакансии</h2>
-
+                <div class="container">
+                    <form method="POST" action="/vacancies/edit/{{$vacancies[0]->id}}">
+                        {{ csrf_field() }}
+                        <input type="submit" class="button" name="edit" value="edit" />
+                        <input type="submit" class="button" name="delete" value="delete" onclick="return confirm('Confirm, please.');" />
+                    </form>
+                </div>
                 <table class="table table-striped">
                     <thead>
                     <tr>

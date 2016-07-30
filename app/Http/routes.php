@@ -37,6 +37,7 @@ Route::get('/vacancies-list/{id}',['uses' =>'VacanciesListController@showVac'])-
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('vacancies/{id}', ['uses' =>'VacanciesController@showVac'])->where('id', '[0-9]+');
+    Route::post('vacancies/edit/{id}', ['uses' =>'VacanciesController@editVacButtonHandler'])->where('id', '[0-9]+');
     Route::get('/vacancies','VacanciesController@index');
     Route::post('/vacancies','VacanciesController@sorter');
     Route::get('/dashboard','DashboardController@index');
