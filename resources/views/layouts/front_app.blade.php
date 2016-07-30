@@ -18,15 +18,6 @@
 
 {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body >
 
@@ -34,15 +25,15 @@
     <div class="container">
         <div class="row">
             <div class="col m4 logo-wrapper">
-                <img src="images/logo-header.png" alt="" />
+                <img src="../images/logo-header.png" alt="" />
             </div>
             <div class="col m8 top-menu">
                 <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Консалтинг</a></li>
-                    <li><a class="bordered" href="#">Трудоустройство</a></li>
-                    <li><a href="#">Образование</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="../">Главная</a></li>
+                    <li><a href="../consulting">Консалтинг</a></li>
+                    <li><a class="bordered" href="../vacancies-list">Трудоустройство</a></li>
+                    <li><a href="../education">Образование</a></li>
+                    <li><a href="../contacts">Контакты</a></li>
                 </ul>
             </div>
         </div>
@@ -59,15 +50,15 @@
   <div class="container footer-content">
     <div class="row">
       <div class="col m2 logo-footer-wrapper">
-        <img src="images/logo-footer.png" alt="" />
+        <img src="../images/logo-footer.png" alt="" />
       </div>
       <div class="col m8 bottom-menu">
         <ul>
-          <li><a href="#">Главная</a></li>
+          <li><a href="../">Главная</a></li>
           <li><a href="#">Консалтинг</a></li>
-          <li><a class="bordered" href="#">Трудоустройство</a></li>
+          <li><a class="bordered" href="../vacancies-list">Трудоустройство</a></li>
           <li><a href="#">Образование</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="../">Контакты</a></li>
         </ul>
       </div>
       <div class="col m2 footer-address">

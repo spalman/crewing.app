@@ -39,4 +39,34 @@ class HomeController extends Controller
         else{$data=null;}
         return view('front.index',$data);
     }
+
+    public function article_vac()
+    {
+        //dd
+        $itemsInTable=DB::table('vacancies')->count();
+        if($itemsInTable > 3)
+        {
+            //get 20% of whole table
+            $data=[
+                'vacancies'=>DB::select('SELECT * FROM vacancies ORDER BY RAND() LIMIT 3;'),
+                ];
+        }
+        else{$data=null;}
+        return view('front.education',$data);
+    }
+
+    public function article_cons()
+    {
+        //dd
+        $itemsInTable=DB::table('vacancies')->count();
+        if($itemsInTable > 3)
+        {
+            //get 20% of whole table
+            $data=[
+                'vacancies'=>DB::select('SELECT * FROM vacancies ORDER BY RAND() LIMIT 3;'),
+                ];
+        }
+        else{$data=null;}
+        return view('front.consulting',$data);
+    }
 }

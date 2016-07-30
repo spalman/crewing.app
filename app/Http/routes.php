@@ -13,6 +13,14 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/education', 'HomeController@article_vac');
+
+Route::get('/consulting', 'HomeController@article_cons');
+
+Route::get('/contacts', function ()    {
+    return view('front.contacts');
+});
+
 Route::auth();
 
 //Route::get('/home', 'HomeController@index');

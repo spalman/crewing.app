@@ -14,15 +14,15 @@
   <div class="container">
     <div class="row">
       <div class="col m4 logo-wrapper">
-        <img src="images/logo-header.png" alt="" />
+        <img src="../images/logo-header.png" alt="" />
       </div>
       <div class="col m8 top-menu">
         <ul>
-          <li><a href="#">Главная</a></li>
-          <li><a href="#">Консалтинг</a></li>
-          <li><a class="bordered" href="#">Трудоустройство</a></li>
-          <li><a href="#">Образование</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="../">Главная</a></li>
+          <li><a href="../consulting">Консалтинг</a></li>
+          <li><a class="bordered" href="../vacancies-list">Трудоустройство</a></li>
+          <li><a href="../education">Образование</a></li>
+          <li><a href="../contacts">Контакты</a></li>
         </ul>
       </div>
     </div>
@@ -40,7 +40,7 @@
             Вы устали сидеть на месте? Готовы к переменам и хотите открыть новые, ранее недостижимые возможности?</br>
             <b>Работа за границей — то, что вам нужно!</b></br>
             Мы готовы оказать квалифицированную помощь в трудоустройстве и подготовить вас к новой главе вашей жизни.</br>
-            <a class="contact-us btn waves-effect waves-light" href="#">Связаться с нами</a>
+            <a class="contact-us btn waves-effect waves-light" href="../contacts">Связаться с нами</a>
           </div>
         </div>
       </div>
@@ -186,11 +186,11 @@
       </div>
       <div class="col m8 bottom-menu">
         <ul>
-          <li><a href="#">Главная</a></li>
+          <li><a href="../">Главная</a></li>
           <li><a href="#">Консалтинг</a></li>
           <li><a class="bordered" href="#">Трудоустройство</a></li>
           <li><a href="#">Образование</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="../contacts">Контакты</a></li>
         </ul>
       </div>
       <div class="col m2 footer-address">

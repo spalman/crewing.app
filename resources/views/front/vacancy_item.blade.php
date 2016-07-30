@@ -11,10 +11,10 @@
             <div class="col m12">
                 <div class="breadcrumbs">
                     <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Трудоустройство</a></li>
-                        <li><a href="#">Соискателям</a></li>
-                        <li><a href="#">Наши вакансии</a></li>
+                        <li><a href="../">Главная</a></li>
+                        <li><a href="../vacancies-list">Трудоустройство</a></li>
+                        <!-- <li><a href="#">Соискателям</a></li>
+                        <li><a href="#">Наши вакансии</a></li> -->
                         <li>{{$vacancies[0]->name}}</li>
                     </ul>
                 </div>

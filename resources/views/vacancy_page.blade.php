@@ -13,14 +13,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Название</th>
-                        <th>Описание</th>
-                        <th>Страна</th>
-                        <th>Специальность</th>
-                        <th>Зарплата</th>
-                        <th>Знание языков</th>
-                        <th>Образование</th>
-                        <th>Пол</th>
-                        <th>Возраст</th>
                         <th>Created at</th>
                     </tr>
                     </thead>
@@ -29,20 +21,6 @@
                         <tr>
                             <td>    {!! $vacancy->id !!} </td>
                             <td>    {!! $vacancy->name !!}  </td>
-                            <td>    {!! $vacancy->description !!}  </td>
-                            <td>    {!! DB::table('countries')->where('id',$vacancy->country)->value('country_name') !!}  </td>
-                            <td>    {!! $vacancy->position !!}  </td>
-                            <td>    {!! $vacancy->salary_from !!} - {{$vacancy->salary_to}} </td>
-
-                            <td>
-                                @foreach($vac_lang as $lang)
-                                        {!! DB::table('languages')->where('id',$lang->lang_id)->value('language') !!}
-                                @endforeach
-                            </td>
-
-                            <td>    {!! $vacancy->education !!}  </td>
-                            <td>    {!! $vacancy->sex !!}  </td>
-                            <td>    {!! $vacancy->age_from !!} - {!! $vacancy->age_to !!}  </td>
                             <td>    {!! $vacancy->created_at !!}   </td>
 
                         </tr>
@@ -50,7 +28,82 @@
                     <tr>
 
                     </tbody>
-                </table>
 
+              </table>
+    <div class="param-wrapper">
+      <div class="param-title">
+        Описание
+      </div>
+      <div class="param-content">
+       {!! $vacancy->description !!}
+      </div>
+    </div>
+
+    <div class="param-wrapper">
+      <div class="param-title">
+        Страна
+      </div>
+      <div class="param-content">
+      {!! DB::table('countries')->where('id',$vacancy->country)->value('country_name') !!}
+      </div>
+    </div>
+
+    <div class="param-wrapper">
+      <div class="param-title">
+        Специальность
+      </div>
+      <div class="param-content">
+       {!! $vacancy->position !!}
+      </div>
+    </div>
+
+    <div class="param-wrapper">
+      <div class="param-title">
+        Зарплата
+      </div>
+      <div class="param-content">
+       {!! $vacancy->salary_from !!} - {{$vacancy->salary_to}}
+      </div>
+    </div>
+
+    <div class="param-wrapper">
+      <div class="param-title">
+        Знание языков
+      </div>
+      <div class="param-content">
+        <ul>
+        @foreach($vac_lang as $lang)
+                <li>{!! DB::table('languages')->where('id',$lang->lang_id)->value('language') !!}</li>
+        @endforeach
+      </ul>
+      </div>
+    </div>
+
+    <div class="param-wrapper">
+      <div class="param-title">
+        Образование
+      </div>
+      <div class="param-content">
+       {!! $vacancy->education !!}
+      </div>
+    </div>
+
+    <div class="param-wrapper">
+      <div class="param-title">
+        Пол
+      </div>
+      <div class="param-content">
+       {!! $vacancy->sex !!}
+      </div>
+    </div>
+
+    <div class="param-wrapper">
+      <div class="param-title">
+       Возраст
+      </div>
+      <div class="param-content">
+       {!! $vacancy->age_from !!} - {!! $vacancy->age_to !!}
+      </div>
+    </div>
         </div>
 @endsection

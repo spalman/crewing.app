@@ -29,6 +29,9 @@
             margin-right: 6px;
         }
     </style>
+
+    <link rel="stylesheet" href="../assets/admin/style.css">
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">

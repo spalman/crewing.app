@@ -41,24 +41,24 @@
                     <th>ID</th>
                     <th>Название</th>
                     <!--<th>Описание</th>-->
-                    <th>Страна</th>
-                    <th>Специальность</th>
+                    <!-- <th>Страна</th> -->
+                    <!-- <th>Специальность</th> -->
                     <th>Зарплата</th>
                     <th>Знание языков</th>
                     <th>Образование</th>
-                    <th>Пол</th>
-                    <th>Возраст</th>
+                    <!-- <th>Пол</th> -->
+                    <!-- <th>Возраст</th> -->
                     <th>Created at</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($vacancies as $vacancy)
                     <tr>
-                        <td>  {!! $vacancy->id !!}   <button type="button" class="btn btn-info" onclick="location.href='/vacancies/{{$vacancy->id}}'">Info</button>    </td>
+                        <td>  {!! $vacancy->id !!}   <a href="#" class="inf-btn" onclick="location.href='/vacancies/{{$vacancy->id}}'">Info</a>    </td>
                         <td>    {!! $vacancy->name !!}  </td>
                         <!--<td>    {!! $vacancy->description !!}  </td>-->
-                        <td>    {!! DB::table('countries')->where('id',$vacancy->country)->value('country_name') !!}  </td>
-                        <td>    {!! $vacancy->position !!}  </td>
+                        <!-- <td>    {!! DB::table('countries')->where('id',$vacancy->country)->value('country_name') !!}  </td> -->
+                        <!-- <td>    {!! $vacancy->position !!}  </td> -->
                         <td>    {!! $vacancy->salary_from !!} - {{$vacancy->salary_to}} </td>
 
                         <td>
@@ -70,8 +70,8 @@
                         </td>
 
                         <td>    {!! $vacancy->education !!}  </td>
-                        <td>    {!! $vacancy->sex !!}  </td>
-                        <td>    {!! $vacancy->age_from !!} - {!! $vacancy->age_to !!}  </td>
+                        <!-- <td>    {!! $vacancy->sex !!}  </td> -->
+                        <!-- <td>    {!! $vacancy->age_from !!} - {!! $vacancy->age_to !!}  </td> -->
                         <td>    {!! $vacancy->created_at !!}   </td>
                     </tr>
                 @endforeach

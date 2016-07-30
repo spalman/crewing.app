@@ -1,0 +1,77 @@
+thead
+{
+  background-color: rgba(33,33,33,0.9);
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+}
+
+th
+{
+  text-align: center;
+}
+
+tr:nth-child(2n)
+{
+      background-color: rgba(0,0,0,0.2);
+}
+
+td
+{
+  padding: 5px 15px;
+  border: 1px solid #dcdcdc;
+}
+
+tr:nth-child(2n) td
+{
+  border: 1px solid #fff;
+}
+
+.inf-btn
+{
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  background-color: #3131B1;
+  vertical-align: middle;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  margin-left: 10px;
+  transition: all 0.2s;
+}
+
+.inf-btn:hover
+{
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.param-title
+{
+  display: inline-block;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: 700;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 12px;
+}
+
+.param-content
+{
+  padding: 15px;
+  margin-top: 5px;
+  background-color: rgba(0,0,0,0.1);
+  font-size: 15px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.param-wrapper
+{
+  padding: 10px;
+  margin: 5px;
+  background-color: rgba(0,0,0,0.05)
+}
